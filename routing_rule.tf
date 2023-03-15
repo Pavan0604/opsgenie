@@ -38,6 +38,7 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
     }
   }
   notify {
-    name = "${opsgenie_escalation.splunk_team_escalation.name}"
-    type = "escalation"
+    name = "${opsgenie_schedule.sre-schedule.name}"
+    type = "schedule"
   }
+}
