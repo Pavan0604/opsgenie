@@ -23,3 +23,28 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
     type = "none"
   }
 }
+
+resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
+  name     = "Storage and Processing Routing Rule"
+  team_id  = "${opsgenie_team.splunk_escalation.id}"
+  order    = 1
+  timezone = "Asia/Kolkata"
+  criteria {
+    type = "match-all-conditions"
+    conditions {
+      field          = "tags"
+      operation      = "contains"
+      expected_value = "index:logprocessor"
+      not            = false
+    }
+    conditions {
+      field          = "tags"
+      operation      = "contains"
+      expected_value = "index:eventstore"
+      not            = false
+    }
+  }
+  notify {
+    type = "none"
+  }
+}
