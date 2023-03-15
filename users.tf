@@ -1,6 +1,6 @@
 resource "opsgenie_user" "neeraj" {
   username  = "neerajnirala@gmail.com"
-  full_name = "Neeraj Kumar
+  full_name = "Neeraj Kumar"
   role      = "User"
   locale    = "en_US"
   timezone  = "Asia/Kolkata"
