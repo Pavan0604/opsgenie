@@ -1,5 +1,5 @@
 resource "opsgenie_user" "neeraj" {
-  username  = "neerajnirala@gmail.com"
+  username  = "neerajnirala1999@gmail.com"
   full_name = "Neeraj Kumar"
   role      = "User"
   locale    = "en_US"
@@ -19,20 +19,20 @@ resource "opsgenie_user" "neeraj" {
   }
 }
 
-resource "opsgenie_user_contact" "neeraj_sms" {
-  username = "${opsgenie_user.neeraj.username}"
-  to       = "91-9060221989"
+resource "opsgenie_user_contact" "swapnil_sms" {
+  username = "${opsgenie_user.swapnil.username}"
+  to       = "91-7477222429"
   method   = "sms"
 }
 
-resource "opsgenie_user_contact" "neeraj_mail" {
-  username = "${opsgenie_user.neeraj.username}"
-  to       = "neerajnirala1999@gmail.com"
+resource "opsgenie_user_contact" "swapnil_mail" {
+  username = "${opsgenie_user.swapnil.username}"
+  to       = "swapnil.kanere@gmail.com"
   method   = "email"
 }
 
-resource "opsgenie_user_contact" "voice" {
-  username = "${opsgenie_user.neeraj.username}"
-  to       = "91-9060221989"
+resource "opsgenie_user_contact" "swapnil_voice" {
+  username = "${opsgenie_user.swapnil.username}"
+  to       = "91-7477222429"
   method   = "voice"
 }
