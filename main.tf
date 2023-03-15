@@ -1,4 +1,11 @@
 #terraform for opsgenie
+terraform {
+  required_providers {
+    databricks = {
+      source  = "opsgenie/opsgenie"
+    }
+  }
+}
 
 resource "opsgenie_user" "swapnil" {
   username  = "swapnilkanere@gmail.com"
