@@ -1,7 +1,7 @@
 #terraform for opsgenie
 terraform {
   required_providers {
-    databricks = {
+    opsgenie = {
       source  = "opsgenie/opsgenie"
     }
   }
