@@ -37,12 +37,6 @@ resource "opsgenie_team_routing_rule" "Storage_and_Processing_test" {
       expected_value = "index:logprocessor"
       not            = false
     }
-    conditions {
-      field          = "tags"
-      operation      = "contains"
-      expected_value = "index:eventstore"
-      not            = false
-    }
   }
   notify {
     type = "none"
