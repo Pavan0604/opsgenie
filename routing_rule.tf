@@ -19,17 +19,6 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
       not            = false
     }
   }
-  time_restriction {
-    type = "weekday-and-time-of-day"
-    restrictions {
-      start_day  = "monday"
-      start_hour = 8
-      start_min  = 0
-      end_day    = "tuesday"
-      end_hour   = 18
-      end_min    = 30
-    }
-  }
   notify {
     type = "none"
   }
