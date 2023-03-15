@@ -19,11 +19,6 @@ resource "opsgenie_user" "neeraj" {
   }
 }
 
-resource "opsgenie_user_contact" "swapnil_sms" {
-  username = "${opsgenie_user.swapnil.username}"
-  to       = "91-7477222429"
-  method   = "sms"
-}
 
 resource "opsgenie_user_contact" "swapnil_mail" {
   username = "${opsgenie_user.swapnil.username}"
@@ -31,8 +26,3 @@ resource "opsgenie_user_contact" "swapnil_mail" {
   method   = "email"
 }
 
-resource "opsgenie_user_contact" "swapnil_voice" {
-  username = "${opsgenie_user.swapnil.username}"
-  to       = "91-7477222429"
-  method   = "voice"
-}
