@@ -13,7 +13,7 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
   criteria {
     type = "match-all-conditions"
     conditions {
-      field          = "description"
+      field          = "tags"
       operation      = "contains"
       expected_value = "index:notificationbackend"
       not            = false
