@@ -18,19 +18,6 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
       expected_value = "index:notificationbackend"
       not            = false
     }
-  }
-  notify {
-    type = "none"
-  }
-}
-
-resource "opsgenie_team_routing_rule" "Storage_and_Processing_test" {
-  name     = "Storage and Processing Routing Rule"
-  team_id  = "${opsgenie_team.splunk_escalation.id}"
-  order    = 1
-  timezone = "Asia/Kolkata"
-  criteria {
-    type = "match-all-conditions"
     conditions {
       field          = "tags"
       operation      = "contains"
