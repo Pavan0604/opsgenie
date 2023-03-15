@@ -1,10 +1,3 @@
-resource "opsgenie_schedule" "sre-schedule" {
-  name = "sre_team_schedule"
-  description = "schedule test for sre team"
-  timezone = "Asia/Kolkata"
-  enabled = false
-}
-
 resource "opsgenie_team" "sre_team" {
   name        = "example team of sre"
   description = "This team deals with all the sre things"
@@ -38,7 +31,6 @@ resource "opsgenie_team_routing_rule" "ingestion_delivery_test" {
     }
   }
   notify {
-    name = "${opsgenie_schedule.sre-schedule.name}"
-    type = "schedule"
+    type = "none"
   }
 }
