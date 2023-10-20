@@ -12,5 +12,6 @@ file "/home/ec2-user/default.txt" do
 end
 
 
-include_recipe 'first_cookbook::userdata'
+include_recipe 'first_cookbook::ssm'
+include_recipe 'first_cookbook::persistent_storage'
 include_recipe 'first_cookbook::crontab'
