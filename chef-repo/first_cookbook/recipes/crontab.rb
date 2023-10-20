@@ -46,3 +46,10 @@ cron "run_custom_script" do
   command '/bin/bash /tmp/timer.sh'
   user 'root'
 end
+
+cron "add_chef_solo_to_crontab" do
+  minute '*/5'
+  command 'chef-solo --no-fork -c https://testbucketforcloudflare.s3.ap-south-1.amazonaws.com/chef/solo.rb -j https://testbucketforcloudflare.s3.ap-south-1.amazonaws.com/chef/web.json --recipe-url=https://testbucketforcloudflare.s3.ap-south-1.amazonaws.com/chef/my_cookbook.tar.gz'
+  user 'root'
+end
+
