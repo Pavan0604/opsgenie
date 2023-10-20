@@ -35,21 +35,3 @@ mount '/opt/clevertap' do
   options 'defaults,nofail,rw'
   action [:mount, :enable]
 end
-
-directory "/opt/clevertap" do
-  owner "ec2-user"
-  group "ec2-user"
-  mode "0755"
-  recursive true
-  action :create
-end
-
-execute "check_fstab_entry" do
-  cwd "/tmp"
-  command <<-EOH
-    if ! cat /etc/fstab | grep "bamboo-home"
-    then
-        echo "LABEL=ec2-user-workdir /opt/clevertap ext4 defaults,nofail 0 2" >> /etc/fstab
-    fi
-  EOH
-end
