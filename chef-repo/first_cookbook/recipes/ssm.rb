@@ -1,8 +1,3 @@
-file "/home/ec2-user/userdata.txt" do
-  content "Hello, this is my userdata cookbook recipe\n"
-  action :create
-end
-
 remote_file "/tmp/amazon-ssm-agent.rpm" do
   source "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm"
   action :create
