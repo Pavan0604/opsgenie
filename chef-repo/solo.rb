@@ -1,1 +1,1 @@
-cookbook_path "/home/ec2-user/chef-repo"
+cookbook_path "/home/ec2-user/"
